@@ -1,3 +1,7 @@
+/*	llist.h
+ *  Singly Linked List Source - Dstruct Library
+ */
+
 #include <stdlib.h>
 #include "llist.h"
 

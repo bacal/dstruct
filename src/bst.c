@@ -1,11 +1,11 @@
-/* tree.c
- *
- *
+/*	bst.h
+ * 	Binary Search Tree source - Dstruct Library
  */
 #include <stdlib.h>
 #include "bst.h"
 
-bst* bst_create(void* data,int* key){
+bst* bst_create(void* data,int* key)
+{
 	bst* newTree = calloc(1,sizeof(struct bst_struct));
 	newTree->left=NULL;
 	newTree->right=NULL;
@@ -13,7 +13,9 @@ bst* bst_create(void* data,int* key){
 	newTree->key = *key;
 	return newTree;
 }
-void bst_add(bst* add, void* data, int* key){
+
+void bst_add(bst* add, void* data, int* key)
+{
 	if(*key < add->key){
 		if(add->left==NULL)
 			add->left = bst_create(data,key);
@@ -29,7 +31,8 @@ void bst_add(bst* add, void* data, int* key){
 	}
 }
 
-void bst_delete(bst* n){
+void bst_delete(bst* n)
+{
 	if(n->right!=NULL){
 		bst_delete((n->right));
 	}
@@ -59,7 +62,8 @@ int bst_search_data(bst* srch, void* data){
 }
 */
 
-void* bst_get_smallest(bst* toSearch){
+void* bst_get_smallest(bst* toSearch)
+{
 	bst* tmp = toSearch;
 	while(tmp->left!=NULL){
 		tmp = tmp->left;
@@ -67,7 +71,9 @@ void* bst_get_smallest(bst* toSearch){
 
 	return tmp->data;
 }
-void* bst_get_largest(bst* toSearch){
+
+void* bst_get_largest(bst* toSearch)
+{
 	bst* tmp = toSearch;
 	while(tmp->right!=NULL){
 		tmp = tmp->right;

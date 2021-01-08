@@ -1,9 +1,13 @@
-/*	tree.h
- *
- *
+/*	bst.h
+ * 	Binary Search Tree Header - Dstruct Library
  */
 
-#pragma once
+#ifndef BST_H
+#define BST_H
+
+#ifdef __cplusplus
+extern "C"{
+#endif
 
 typedef struct bst_struct{
 	int key;
@@ -19,3 +23,9 @@ void bst_delete(bst*);
 int bst_search(bst*,void*);
 void* bst_getSmallest(bst*);
 void* bst_getLargest(bst*);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* BST_H */

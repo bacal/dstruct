@@ -1,7 +1,13 @@
 /*	llist.h
- *
- *
+ *  Singly Linked List Header - Dstruct Library
  */
+
+#ifndef LLIST_H
+#define LLIST_H
+
+#ifdef __cplusplus
+extern "C"{
+#endif
 
 typedef struct llist_struct{
     void* data;
@@ -15,3 +21,10 @@ void* llist_get(llist* l, int* index);
 void llist_add(void* data, llist* l);
 int llist_remove(llist* l, int* index);
 llist* llist_end(llist* l);
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* LLIST_H */
