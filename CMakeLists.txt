@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16.0)
 set(CMAKE_GENERATOR "Unix Makefiles")
-project(dstruct VERSION 0.0.1 DESCRIPTION "Another C++ engine...")
+project(dstruct VERSION 0.0.1 DESCRIPTION "A C data structure library")
 
 include(GNUInstallDirs)
 

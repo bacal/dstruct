@@ -20,10 +20,9 @@ typedef struct bst_struct{
 bst* bst_create(void* data, int* key);
 void bst_add(bst* add, int* key, void* data, size_t bytes);
 void bst_delete(bst* bst);
-int bst_search(bst* bst,void* data);
 void* bst_getSmallest(bst* bst);
 void* bst_getLargest(bst* bst);
-int bst_contains(bst* srch, void* data);
+int bst_contains(bst* srch, void* data, size_t bytes);
 
 #ifdef __cplusplus
 }

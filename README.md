@@ -11,3 +11,10 @@ $ cd build
 $ cmake ..
 $ make
 ```
+
+### Meson
+```
+$ meson build
+$ cd build
+$ meson compile
+```

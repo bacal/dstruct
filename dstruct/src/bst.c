@@ -45,13 +45,13 @@ void bst_delete(bst* n)
 
 int bst_contains(bst* srch, void* data, size_t bytes){
 	if(srch->left!=NULL){
-		if(bst_search(srch->left,data,bytes)){
+		if(bst_contains(srch->left,data,bytes)){
 			
 		}
 			return 1;
 	}
 	if(srch->right!=NULL){
-		if(bst_search(srch->right,data,bytes)){
+		if(bst_contains(srch->right,data,bytes)){
 			return 1;	
 		}
 	}

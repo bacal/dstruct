@@ -1,5 +1,6 @@
 /lib/
 /build/
+/builddir/
 
 *.exe
 *.dll

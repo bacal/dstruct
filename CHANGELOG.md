@@ -1,9 +1,16 @@
 # Change Log
 
+## Jan 9 2021 - 5:46
+
+**Added**
+- Meson build support
+
+**Updated**
+- Readme with meson support info
 
 ## Jan 9 2021 - 04:38
-**Revisions**
-- Change project structure
+**Updated**
+- Changed project structure
 - Updated demo.c with an actual program
 
 **Added**
