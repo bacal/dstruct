@@ -6,6 +6,7 @@
 - Change project structure
 - Updated demo.c with an actual program
 
+
 **Added**
 - stack.h
 - dllist.h
@@ -14,23 +15,30 @@
 **Fixed**
 - Issue with copying data into data structures using Void pointers
 
+
 ## Jan 8 2021 - 17:34
 **Revisions**
 - Moved include files into include/ folder
+
+
 **Added**
 - Readme
 
 ## Jan 8 2021 - 16:46
+
 **Fixed**
 - Unified code style
+
 **Added**
 - Include guards 
 
 ## Jan 8 2021 - 13:42
+
 **Fixed**
 - Removed unnessecary includes
 
 ## Jan 8 2021 - 13:31
 Initial commit.
+
 **Added**
 - Basic project files 
