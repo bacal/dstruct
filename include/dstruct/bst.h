@@ -18,11 +18,12 @@ typedef struct bst_struct{
 
 
 bst* bst_create(void* data, int* key);
-void bst_add(bst* add, void* data, int* key);
-void bst_delete(bst*);
-int bst_search(bst*,void*);
-void* bst_getSmallest(bst*);
-void* bst_getLargest(bst*);
+void bst_add(bst* add, int* key, void* data, size_t bytes);
+void bst_delete(bst* bst);
+int bst_search(bst* bst,void* data);
+void* bst_getSmallest(bst* bst);
+void* bst_getLargest(bst* bst);
+int bst_contains(bst* srch, void* data);
 
 #ifdef __cplusplus
 }

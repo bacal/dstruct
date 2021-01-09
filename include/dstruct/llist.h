@@ -16,11 +16,11 @@ typedef struct llist_struct{
 
 
 llist* llist_create();
-void llist_delete(llist* l);
-void* llist_get(llist* l, int* index);
-void llist_add(void* data, llist* l);
-int llist_remove(llist* l, int* index);
-llist* llist_end(llist* l);
+void llist_delete(llist* list);
+void* llist_get(llist* list, int* index);
+void llist_add(llist* list,void* data, size_t bytes);
+int llist_remove(llist* list, int* index);
+llist* llist_end(llist* list);
 
 
 #ifdef __cplusplus

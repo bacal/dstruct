@@ -7,7 +7,7 @@ include(GNUInstallDirs)
 # Check for Math library (Linux)
 find_library(m OPTIONAL)
 
-set(CMAKE_SOURCE_DIR src)
+set(CMAKE_SOURCE_DIR dstruct/src)
 
 set(dstruct_SRC ${CMAKE_SOURCE_DIR}/bst.c ${CMAKE_SOURCE_DIR}/llist.c)
 

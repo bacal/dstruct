@@ -1,3 +1,6 @@
 /lib/
 /build/
 
+*.exe
+*.dll
+*.stackdump

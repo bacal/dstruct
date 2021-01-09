@@ -1,8 +1,8 @@
 /*	llist.h
  *  Singly Linked List Source - Dstruct Library
  */
-
 #include <stdlib.h>
+#include <string.h>
 #include "llist.h"
 
 
@@ -14,33 +14,41 @@ llist* llist_create()
     return list;
 }
 
-void llist_delete(llist* l)
+void llist_delete(llist* list)
 {
-    if(l)
-        llist_delete(l->next);
+    if(list)
+        llist_delete(list->next);
 }
 
-void* llist_get(llist* l, int* index)
+void* llist_get(llist* list, int* index)
 {
-    llist* temp = l;
+    llist* temp = list;
     for(int i=0; i<*index; i++){
         temp = temp->next;
     }
     return temp->data;
 }
 
-void llist_add(void* data, llist* l)
+void llist_add( llist* list,void* data, size_t bytes)
 {
-    llist* to_add = llist_create();
-    to_add->data = data;
-    llist_end(l)->next = to_add;
+    if(list->next == NULL && list->data==NULL){
+        list->data = malloc(bytes);
+        memcpy(list->data,data,bytes);
+    }
+    else{
+        llist* to_add = llist_create();
+        to_add->data = malloc(bytes);
+
+        memcpy(to_add->data,data,bytes);
+        llist_end(list)->next = to_add;
+    }
 }
 
-int llist_remove(llist* l, int* index)
+int llist_remove(llist* list, int* index)
 {
-    llist* temp = l;
+    llist* temp = list;
     llist* to_free;
-    llist** head = &l;
+    llist** head = &list;
 
     for(int i=0; i<*index; i++){
         if(!temp || temp->next->next == NULL){
@@ -51,11 +59,11 @@ int llist_remove(llist* l, int* index)
     if(!temp)
         return 1;
     if(index == 0){
-        l = l->next;
+        list = list->next;
         free(*head);
     }
     else{
-        temp = l;
+        temp = list;
         for(int i=0; i<*index-1; i++){
             temp = temp->next;
         }
@@ -66,9 +74,9 @@ int llist_remove(llist* l, int* index)
     return 0;
 }
 
-llist* llist_end(llist* l)
+llist* llist_end(llist* list)
 {
-    llist* temp = l;
+    llist* temp = list;
     while(temp->next!=NULL){
         temp = temp->next;
     }

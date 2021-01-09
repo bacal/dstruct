@@ -2,6 +2,7 @@
  * 	Binary Search Tree source - Dstruct Library
  */
 #include <stdlib.h>
+#include <string.h>
 #include "bst.h"
 
 bst* bst_create(void* data,int* key)
@@ -14,20 +15,20 @@ bst* bst_create(void* data,int* key)
 	return newTree;
 }
 
-void bst_add(bst* add, void* data, int* key)
+void bst_add(bst* add,  int* key, void* data, size_t bytes)
 {
 	if(*key < add->key){
 		if(add->left==NULL)
 			add->left = bst_create(data,key);
 
 		else
-			bst_add(add->left,data,key);
+			bst_add(add->left,data,key,bytes);
 	}
 	if(*key > add->key){
 		if(add->right==NULL)
 			add->right = bst_create(data,key);
 		else
-			bst_add(add->right,data,key);
+			bst_add(add->right,data,key,bytes);
 	}
 }
 
@@ -42,25 +43,24 @@ void bst_delete(bst* n)
 	free(n);
 }
 
-/*
-int bst_search_data(bst* srch, void* data){
+int bst_contains(bst* srch, void* data, size_t bytes){
 	if(srch->left!=NULL){
-		if(bst_search(srch->left,data)){
+		if(bst_search(srch->left,data,bytes)){
 			
 		}
 			return 1;
 	}
 	if(srch->right!=NULL){
-		if(bst_search(srch->right,data)){
+		if(bst_search(srch->right,data,bytes)){
 			return 1;	
 		}
 	}
-	if( *(srch->data) == *data)
+	if(!memcmp(srch->data,data,bytes))
 		return 1;
 
 	return 0;	
 }
-*/
+
 
 void* bst_get_smallest(bst* toSearch)
 {
