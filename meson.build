@@ -10,7 +10,8 @@ cc=meson.get_compiler('c')
 cc.get_id()
 inc_dir = include_directories('include/dstruct/')
 dstruct_sources = ['dstruct/src/bst.c',
-                   'dstruct/src/llist.c']
+                   'dstruct/src/llist.c',
+                   'dstruct/src/dllist.c']
 
 libdstruct = shared_library('dstruct',
                             dstruct_sources,

@@ -24,8 +24,14 @@ int main(void){
     printf("\n");
     print_llistc(listc);
     // print_llist_f(listf);
+
+    dllist* dlist = dllist_create();
+    dllist_add(dlist,&i,sizeof(int));
+    
     return 0;
 }
+
+
 void print_llisti(llist* list){
     llist* ptr = list;
     while(ptr!=NULL){

@@ -1,6 +1,15 @@
 # Change Log
 
-## Jan 9 2021 - 5:46
+## Jan 10 2021 - 05:39
+**Added**
+- dllist.c
+- implemented dllist.h
+
+**Updated**
+- demo.c - creates a dllist, no tests yet
+- meson.build - added dllist.c to sources
+
+## Jan 9 2021 - 05:46
 
 **Added**
 - Meson build support
