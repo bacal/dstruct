@@ -24,9 +24,13 @@ int main(void){
     printf("\n");
     print_llistc(listc);
     // print_llist_f(listf);
-
+    stack* stk = stack_create();
+    stack_push(stk, i, sizeof(int));
+    printf("Stack Data = %d\n",*(int*)stack_pop(stk));
+    stack_pop(stk);
     dllist* dlist = dllist_create();
     dllist_add(dlist,&i,sizeof(int));
+    
     
     return 0;
 }

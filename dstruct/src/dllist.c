@@ -59,7 +59,7 @@ int dllist_remove(dllist* dlist, int index)
     for(count = 0; count < index; count++){
         temp = temp->next;
     } 
-    return temp->data;
+    return 0;
 }
 
 dllist* dllist_end(dllist* dlist)

@@ -4,6 +4,6 @@
 #include "bst.h"
 #include "llist.h"
 #include "dllist.h"
-
+#include "stack.h"
 
 #endif /* DSTRUCT_H */

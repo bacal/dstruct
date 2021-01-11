@@ -1,5 +1,14 @@
 # Change Log
 
+## Jan 11 2021 - 04:04
+**Added**
+- stack.c
+- implemented stack.h
+
+**Updated**
+- meson.build - added stack.c to sources
+- CMakeLists.txt - added stack.c to sources
+
 ## Jan 10 2021 - 05:39
 **Added**
 - dllist.c

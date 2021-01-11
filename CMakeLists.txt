@@ -9,7 +9,11 @@ find_library(m OPTIONAL)
 
 set(CMAKE_SOURCE_DIR dstruct/src)
 
-set(dstruct_SRC ${CMAKE_SOURCE_DIR}/bst.c ${CMAKE_SOURCE_DIR}/llist.c ${CMAKE_SOURCE_DIR}/dllist.c)
+set(dstruct_SRC 
+    ${CMAKE_SOURCE_DIR}/bst.c
+    ${CMAKE_SOURCE_DIR}/llist.c 
+    ${CMAKE_SOURCE_DIR}/dllist.c
+    ${CMAKE_SOURCE_DIR}/stack.c)
 
 add_library(dstruct SHARED ${dstruct_SRC})
 target_include_directories(dstruct PRIVATE include/dstruct)
