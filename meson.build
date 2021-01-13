@@ -12,7 +12,8 @@ inc_dir = include_directories('include/dstruct/')
 dstruct_sources = ['dstruct/src/bst.c',
                    'dstruct/src/llist.c',
                    'dstruct/src/dllist.c',
-                   'dstruct/src/stack.c']
+                   'dstruct/src/stack.c',
+                   'dstruct/src/dyarray.c']
 
 libdstruct = shared_library('dstruct',
                             dstruct_sources,

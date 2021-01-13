@@ -1,5 +1,13 @@
 # Change Log
 
+## Jan 13 2021 - 12:08
+
+**Added**
+- dyarray.h
+
+**Updated**
+- implemented dyarray.h
+
 ## Jan 11 2021 - 04:04
 **Added**
 - stack.c

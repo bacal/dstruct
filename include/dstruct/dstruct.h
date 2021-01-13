@@ -5,5 +5,6 @@
 #include "llist.h"
 #include "dllist.h"
 #include "stack.h"
+#include "dyarray.h"
 
 #endif /* DSTRUCT_H */

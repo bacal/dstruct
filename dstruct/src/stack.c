@@ -36,7 +36,7 @@ void stack_push(stack* stack_name, void* data, size_t bytes)
 void* stack_pop(stack* stack_name)
 {
     if(stack_name->top == -1){
-        printf("Error: Stack underflow");
+        printf("Error: Stack underflow\n");
         exit(1);
     }
     void* data = stack_name->data[stack_name->top];

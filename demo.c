@@ -27,10 +27,15 @@ int main(void){
     stack* stk = stack_create();
     stack_push(stk, i, sizeof(int));
     printf("Stack Data = %d\n",*(int*)stack_pop(stk));
-    stack_pop(stk);
+    // stack_pop(stk);
     dllist* dlist = dllist_create();
-    dllist_add(dlist,&i,sizeof(int));
+    dllist_add(dlist,(void*)i,sizeof(int));
     
+    dyarray* array = dyarray_create(30);
+    dyarray_add(array,(void*)i,sizeof(int));
+    printf("Number = %d\n",*(int*)array->data[0]);
+    dyarray_erase(array);
+
     
     return 0;
 }
