@@ -12,7 +12,7 @@ $ make
 $ make demo
 ```
 
-### CMake (All Platforms)
+### CMake
 ```
 $ mkdir build
 $ cd build
