@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -O2 --std=gnu99 -fpic -Wall -g 
+CFLAGS = --std=gnu99 -fPIC -Wall 
 SRCDIR = dstruct/src
 INCDIR = dstruct/include/dstruct
 LIBDIR = lib
@@ -9,12 +9,11 @@ LIBS = $(patsubst %.c,%,$(SRCS))
 PROGS = $(patsubst dstruct/src/%,%,$(LIBS))
 
 all: $(PROGS) 
-	gcc -shared -Lstatic $(patsubst %,$(LIBDIR)/%.o,$(PROGS)) -o $(LIBDIR)/lib$(TARGET).so
+	gcc -shared -Lstatic $(patsubst %,$(LIBDIR)/%.o,$(PROGS)) -Wl,-rpath $(LIBDIR) -o $(LIBDIR)/lib$(TARGET).so
 %: $(SRCDIR)/%.c
 	$(CC) $< -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@.o
 demo: all
 	$(CC) demo.c -I $(INCDIR) -L$(LIBDIR) -l$(TARGET) -o demo
-	export LD_LIBRARY_PATH=$(LIBDIR)/
 	
 .PHONY: clean
 clean:

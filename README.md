@@ -3,6 +3,15 @@
 ### Building
 There are no external dependencies for this library just build with a build system of your choice.
 
+### GNU Make
+```
+$ make
+```
+- Optionally to make the demo program
+```
+$ make demo
+```
+
 ### CMake (All Platforms)
 ```
 $ mkdir build
