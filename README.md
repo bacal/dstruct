@@ -1,6 +1,6 @@
 # Dstruct - A data structure library written in C
 
-# Use
+### Use
 This library is intended to be a type agnostic library, some minor memory management is required, however this is not much more than passing the size of each data type in bytes.
 
 You must cast your original pointer to void a void* in order to store it. When retrieving data from the data structure, you must cast back to the original type
