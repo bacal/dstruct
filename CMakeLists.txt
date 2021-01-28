@@ -1,20 +1,12 @@
 cmake_minimum_required(VERSION 3.16.0)
+project(demo)
+
 set(CMAKE_GENERATOR "Unix Makefiles")
-project(dstruct VERSION 0.0.1 DESCRIPTION "A C data structure library")
 
-include(GNUInstallDirs)
+add_subdirectory(dstruct)
+add_executable(demo)
+target_include_directories(demo PRIVATE dstruct/include/dstruct)
+target_sources(demo PRIVATE demo.c)
+target_link_libraries(demo dstruct)
 
-# Check for Math library (Linux)
-find_library(m OPTIONAL)
 
-set(CMAKE_SOURCE_DIR dstruct/src)
-
-set(dstruct_SRC 
-    ${CMAKE_SOURCE_DIR}/bst.c
-    ${CMAKE_SOURCE_DIR}/llist.c 
-    ${CMAKE_SOURCE_DIR}/dllist.c
-    ${CMAKE_SOURCE_DIR}/stack.c
-    ${CMAKE_SOURCE_DIR}/dyarray.c)
-
-add_library(dstruct SHARED ${dstruct_SRC})
-target_include_directories(dstruct PRIVATE include/dstruct)

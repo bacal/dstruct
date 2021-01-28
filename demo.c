@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "include/dstruct/dstruct.h"
+#include "dstruct.h"
 
 void print_llisti(llist* list);
 void print_llistc(llist* list);
