@@ -48,6 +48,6 @@ $ meson compile
 Copy the shared dstruct library to your project
 
 ### CMake 
-You can copy the dstruct subdirectory into your project and put `add_subdirectory(dstruct)` in your toplevel makefile
+You can copy the dstruct subdirectory into your project and put `add_subdirectory(dstruct)` in your toplevel CMakeLists.txt
 
 
