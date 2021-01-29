@@ -18,6 +18,7 @@ void llist_delete(llist* list)
 {
     if(list)
         llist_delete(list->next);
+    free(list);
 }
 
 void* llist_get(llist* list, int* index)

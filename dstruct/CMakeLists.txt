@@ -6,11 +6,11 @@ include(GNUInstallDirs)
 add_library(dstruct SHARED)
 target_include_directories(dstruct PRIVATE include/dstruct)
 
-target_sources(dstruct PRIVATE src/bst.c
-                               src/llist.c
-                               src/dllist.c
-                               src/stack.c
-                               src/dyarray.c)
+target_sources(dstruct PRIVATE src/bst
+                               src/llist
+                               src/dllist
+                               src/stack
+                               src/dyarray)
 
 
 

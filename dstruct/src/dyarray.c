@@ -25,7 +25,7 @@ void dyarray_remove(dyarray* array, int index)
     free(array->data[index]);
     array->data[index] = NULL;
 }
-void dyarray_erase(dyarray* array)
+void dyarray_delete(dyarray* array)
 {
     for(int i=0; i<array->count; i++){
         dyarray_remove(array,i);

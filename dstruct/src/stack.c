@@ -11,7 +11,7 @@ stack* stack_create()
 }
 void stack_delete(stack* stack_name)
 {
-    while(stack_name->size > 0){
+    while(stack_name->top > 0){
         stack_pop(stack_name);
     }
     free(stack_name->data);
