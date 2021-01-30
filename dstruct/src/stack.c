@@ -1,3 +1,14 @@
+/**
+ * @file stack.c
+ * @author Bacal Mesfin (mesfinb2@vcu.edu)
+ * @brief Stack implementation
+ * @version 0.1
+ * @date 2021-01-30
+ * 
+ * @copyright Copyright (c) 2021 Bacal Mesfin
+ * This project is licensed under the MIT license
+ * 
+ */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

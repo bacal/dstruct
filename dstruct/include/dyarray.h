@@ -13,13 +13,13 @@
 #define DYARRAY_H
 
 /**
- * @brief 
+ * @brief Dynamic Array structure
  * 
  */
 typedef struct dyarray_struct{
-    int size;
-    int count;
-    void** data;
+    int size; ///< Size of the array
+    int count; ///< Number of elements in the array
+    void** data; ///< An array of void* elements
 }dyarray;
 
 dyarray* dyarray_create(int size);

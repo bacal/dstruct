@@ -32,10 +32,8 @@ There are no external dependencies for this library just build with a build syst
 ### GNU Make
 ```
 $ make
-```
-- Optionally to make the demo program
-```
-$ make demo
+
+$ make demo //Optional, creates a demo program
 ```
 
 ### CMake

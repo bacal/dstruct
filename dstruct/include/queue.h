@@ -5,14 +5,36 @@
  * @version 0.1
  * @date 2021-01-30
  * 
- * @copyright Copyright (c) 2021
+ * @copyright Copyright (c) 2021 Bacal Mesfin. 
+ * This project is released under the MIT License
  * 
  */
 #ifndef QUEUE_H
 #define QUEUE_H
 
+/**
+ * @brief Queue Structure
+ * 
+ */
 typedef struct queue_struct{
     
 }queue;
+
+/**
+ * @brief Enqueue data to the queue
+ * 
+ * @param q The Queue that data will be added to
+ * @param data The data that is being enqueued
+ * @param bytes Size of the data in bytes
+ */
+void queue_enqueue(queue* q, void* data, size_t bytes);
+
+/**
+ * @brief Dequeue data from the queue
+ * 
+ * @param q The Queue that data will be removed from
+ * @return void* Data that has been dequeued
+ */
+void* queue_dequeue(queue* q);
 
 #endif /* QUEUE_H */

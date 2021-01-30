@@ -16,8 +16,8 @@
 extern "C"{
 #endif
 /**
- * Binary search tree strucutre
- * @brief This is a structure of a key, value Binary Search Tree (BST)
+ * @brief Binary search tree strucutre
+ * 
  */
 typedef struct bst_struct{
 	int key; ///< Key value which is used to sort tree

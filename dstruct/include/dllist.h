@@ -18,8 +18,8 @@ extern "C"{
 #endif
 
 /**
- * Doubly Linked List structure
- * @brief A doubly linked list structure that contains a void* to your data
+ * @brief Doubly Linked List structure
+ * 
  */
 typedef struct dllist_struct{
     void* data; ///< The data you wish to store

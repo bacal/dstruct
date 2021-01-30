@@ -5,8 +5,8 @@
  * @version 0.1
  * @date 2021-01-30
  * 
- * @copyright Copyright (c) 2021
- * 
+ * @copyright Copyright (c) 2021. 
+ * This project is released under the MIT License
  */
 #ifndef STACK_H
 #define STACK_H
