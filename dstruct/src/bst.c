@@ -15,7 +15,11 @@ bst* bst_create(void* data,int* key)
 	return newTree;
 }
 
-void bst_add(bst* add,  int* key, void* data, size_t bytes)
+/**
+ * Adds a node to the tree, uses memcpy() so you must pass a size in bytes to the tree
+ */
+
+void bst_add(bst* add, int* key, void* data, size_t bytes)
 {
 	if(*key < add->key){
 		if(add->left==NULL)

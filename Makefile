@@ -22,3 +22,4 @@ demo: all
 clean:
 	rm ./$(LIBDIR)/*.o
 	rm ./$(LIBDIR)/lib$(TARGET).so	
+	rm ./demo

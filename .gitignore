@@ -19,6 +19,9 @@
 # Demo executable file
 demo
 
+# Doxygen documentation folder
+/docs/
+
 # KDevelop tmp files
 *swp
 *.kdev4

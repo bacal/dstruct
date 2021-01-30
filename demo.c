@@ -62,4 +62,3 @@ void print_llistc(llist* list){
     }
     printf("\n");
 }
-
