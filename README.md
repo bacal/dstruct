@@ -1,6 +1,15 @@
-# Dstruct - A data structure library written in C
+# DStruct - A data structure library written in C
 
-### Use
+## **Included data structures**
+- Singly Linked Lists
+- Doubly Linked Lists
+- Binary Search Trees
+- Dynamic Arrays
+- Stacks
+
+
+## **Use**
+
 This library is intended to be a type agnostic library, some minor memory management is required; however this is not much more than passing the size of each data type in bytes.
 
 You must cast your original pointer to a void* in order to store it. When retrieving data from the data structure, you must cast back to the original pointer type and dereference to get the value.
@@ -15,7 +24,7 @@ printf("Item: %d\n",*(int*)l.get(0)); // prints the number 4
 ```
 
 
-### Building library
+## **Building library**
 There are no external dependencies for this library just build with a build system of your choice.
 
 ### GNU Make
@@ -42,7 +51,7 @@ $ cd build
 $ meson compile
 ```
 
-### Linking the library to your project
+## **Linking the library to your project**
 
 ### Make
 Copy the shared dstruct library to your project
