@@ -1,7 +1,21 @@
+/**
+ * @file dyarray.h
+ * @author Bacal Mesfin (mesfinb2@vcu.edu)
+ * @brief Dynamically allocated arrays prototype
+ * @version 0.1
+ * @date 2021-01-30
+ * 
+ * @copyright Copyright (c) 2021 Bacal Mesfin. 
+ * This project is released under the MIT License
+ * 
+ */
 #ifndef DYARRAY_H
 #define DYARRAY_H
 
-
+/**
+ * @brief 
+ * 
+ */
 typedef struct dyarray_struct{
     int size;
     int count;

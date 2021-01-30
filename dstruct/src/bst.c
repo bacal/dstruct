@@ -1,5 +1,12 @@
-/*	bst.h
- * 	Binary Search Tree source - Dstruct Library
+/**
+ * @file bst.c
+ * @author Bacal Mesfin (mesfinb2@vcu.edu)
+ * @brief Binary Search Tree implementation
+ * @version 0.1
+ * @date 2021-01-30
+ * 
+ * @copyright Copyright (c) 2021
+ * 
  */
 #include <stdlib.h>
 #include <string.h>
@@ -14,10 +21,6 @@ bst* bst_create(void* data,int* key)
 	newTree->key = *key;
 	return newTree;
 }
-
-/**
- * Adds a node to the tree, uses memcpy() so you must pass a size in bytes to the tree
- */
 
 void bst_add(bst* add, int* key, void* data, size_t bytes)
 {
@@ -75,7 +78,12 @@ void* bst_get_smallest(bst* toSearch)
 
 	return tmp->data;
 }
-
+/**
+ * @brief
+ * 
+ * @param toSearch 
+ * @return void* 
+ */
 void* bst_get_largest(bst* toSearch)
 {
 	bst* tmp = toSearch;

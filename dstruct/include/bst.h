@@ -1,7 +1,14 @@
-/*	bst.h
- * 	Binary Search Tree Header - Dstruct Library
+/**
+ * @file bst.h
+ * @author Bacal Mesfin (mesfinb2@vcu.edu)
+ * @brief Binary Search Tree prototype
+ * @version 0.1
+ * @date 2021-01-30
+ * 
+ * @copyright Copyright (c) 2021 Bacal Mesfin. 
+ * This project is released under the MIT License
+ * 
  */
-
 #ifndef BST_H
 #define BST_H
 
@@ -27,7 +34,7 @@ typedef struct bst_struct{
 bst* bst_create(void* data, int* key);
 
 /**
- * Adds a root to a binary search tree
+ * @brief Adds a root to a binary search tree
  * @param bst Binary search tree you want to add the data to
  * @param key Key for the new node in the tree
  * @param data Data to be stored in the new node

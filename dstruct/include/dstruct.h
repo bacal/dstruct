@@ -1,3 +1,14 @@
+/**
+ * @file dstruct.h
+ * @author Bacal Mesfin (mesfinb2@vcu.edu)
+ * @brief Main header file for all data structures
+ * @version 0.1
+ * @date 2021-01-30
+ * 
+ * @copyright Copyright (c) 2021 Bacal Mesfin. 
+ * This project is released under the MIT License
+ * 
+ */
 #ifndef DSTRUCT_H
 #define DSTRUCT_H
 
