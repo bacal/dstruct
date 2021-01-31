@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = --std=gnu99 -fPIC -Wall 
 SRCDIR = dstruct/src
-INCDIR = dstruct/include/dstruct
+INCDIR = dstruct/include/
 LIBDIR = lib
 SRCS = $(wildcard $(SRCDIR)/*.c)
 TARGET = dstruct

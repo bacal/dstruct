@@ -4,7 +4,7 @@ project(dstruct VERSION 0.0.1 DESCRIPTION "A C data structure library")
 include(GNUInstallDirs)
 
 add_library(dstruct SHARED)
-target_include_directories(dstruct PRIVATE include/dstruct)
+target_include_directories(dstruct PRIVATE include/)
 
 target_sources(dstruct PRIVATE src/bst
                                src/llist
