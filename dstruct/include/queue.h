@@ -17,7 +17,8 @@
  * 
  */
 typedef struct queue_struct{
-    
+    void** data;
+    size_t size;
 }queue;
 
 /**
