@@ -30,8 +30,10 @@ typedef struct bst_struct{
  * Creates a binary search tree root
  * @param data Data to be stored in tree
  * @param key Key that represents the node
+ * @param bytes Size of the data in bytes
  */
-bst* bst_create(void* data, int* key);
+  
+bst* bst_create(void* data, int* key, size_t bytes);
 
 /**
  * @brief Adds a root to a binary search tree

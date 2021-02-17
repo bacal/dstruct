@@ -48,15 +48,23 @@ void stack_push(stack* stack_name, void* data, size_t bytes)
 
 }
 
-void* stack_pop(stack* stack_name)
+void stack_pop(stack* stack_name)
 {
     if(stack_name->top == -1){
         printf("Error: Stack underflow\n");
         exit(1);
     }
-    void* data = stack_name->data[stack_name->top];
     free(stack_name->data[stack_name->top]);
     stack_name->data[stack_name->top] = NULL;
     stack_name->top--;
-    return data;
+}
+
+void* stack_peek(stack* stack_name){
+  if(stack_name->top < 0){
+    printf("Stack is empty");
+    return NULL;
+  }
+  else
+    return stack_name->data[stack_name->top];
+    
 }

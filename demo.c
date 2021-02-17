@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "dstruct.h"
-#define SIZE 20000
+#define SIZE 2
 
 int i=0;
 
@@ -23,7 +23,7 @@ int main(void){
     stack* stk = stack_create();
     dllist* dlist = dllist_create();
     dyarray* array = dyarray_create(30);
-    
+    bst* tree;
     printf("Adding to llist\n");
 
     for((*i)=0; (*i)<SIZE; (*i)++){
@@ -38,16 +38,17 @@ int main(void){
     }
     
     printf(" done\n");
+
     
     print_llisti(listi);
     printf("\n");
     print_llistc(listc);
 
     stack_push(stk, i, sizeof(int));
-    printf("Stack Data = %d\n",*(int*)stack_pop(stk));
-    //stack_pop(stk);
+    printf("Stack Data = %d\n",*(int*)stack_peek(stk));
+    stack_pop(stk);
     dllist_add(dlist,(void*)i,sizeof(int));
-    
+    tree = bst_create((void*)i, i, sizeof(int));
 
     dyarray_add(array,(void*)i,sizeof(int));
     printf("Number = %d\n",*(int*)array->data[0]);
@@ -57,6 +58,7 @@ int main(void){
     llist_delete(listc);
     dyarray_delete(array);
     dllist_delete(dlist);
+    bst_delete(tree);
     
     free(c);
     free(i);

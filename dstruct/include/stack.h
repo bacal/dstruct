@@ -48,8 +48,16 @@ void stack_push(stack* stack_name, void* data, size_t bytes);
  * @brief Pops an item from the stack (removes)
  * 
  * @param stack_name Name of the stack to pop data from
+ * @param bytes Size of the data type contained in the stack
  * @return void* data
  */
-void* stack_pop(stack* stack_name);
+void stack_pop(stack* stack_name);
 
+/**
+ *@brief Peek at the stack
+ *
+ *@param stack_name Name of the stack to peek at
+ *@return void* data
+ */
+void* stack_peek(stack* stack_name);
 #endif /* STACK_H */

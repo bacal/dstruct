@@ -12,41 +12,43 @@
 #include <string.h>
 #include "bst.h"
 
-bst* bst_create(void* data,int* key)
+bst* bst_create(void* data,int* key, size_t bytes)
 {
-	bst* newTree = calloc(1,sizeof(struct bst_struct));
-	newTree->left=NULL;
-	newTree->right=NULL;
-	newTree->data=data;
-	newTree->key = *key;
-	return newTree;
+	bst* new_tree = calloc(1,sizeof(struct bst_struct));
+	new_tree->left=NULL;
+	new_tree->right=NULL;
+	new_tree->data = malloc(sizeof(bytes));
+	memcpy(new_tree->data, data, bytes);
+	new_tree->key = *key;
+	return new_tree;
 }
 
 void bst_add(bst* add, int* key, void* data, size_t bytes)
 {
 	if(*key < add->key){
 		if(add->left==NULL)
-			add->left = bst_create(data,key);
+		  add->left = bst_create(data,key,bytes);
 
 		else
-			bst_add(add->left,data,key,bytes);
+		  bst_add(add->left,data,key,bytes);
 	}
 	if(*key > add->key){
 		if(add->right==NULL)
-			add->right = bst_create(data,key);
+		  add->right = bst_create(data,key,bytes);
 		else
-			bst_add(add->right,data,key,bytes);
+		  bst_add(add->right,data,key,bytes);
 	}
 }
 
 void bst_delete(bst* n)
 {
-	if(n->right!=NULL){
-		bst_delete((n->right));
+	if(n->right){
+		bst_delete(n->right);
 	}
-	if(n->left!=NULL){
+	if(n->left){
 		bst_delete(n->left);
-	}	
+	}
+	free(n->data);
 	free(n);
 }
 
