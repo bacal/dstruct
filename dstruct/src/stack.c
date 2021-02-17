@@ -25,7 +25,11 @@ void stack_delete(stack* stack_name)
     while(stack_name->top > 0){
         stack_pop(stack_name);
     }
-    free(stack_name->data);
+    if(stack_name->data){
+      if(stack_name->data[0])
+	free(stack_name->data[0]);
+      free(stack_name->data);
+    }
     free(stack_name);
 }
 void stack_push(stack* stack_name, void* data, size_t bytes)
@@ -51,6 +55,7 @@ void* stack_pop(stack* stack_name)
         exit(1);
     }
     void* data = stack_name->data[stack_name->top];
+    free(stack_name->data[stack_name->top]);
     stack_name->data[stack_name->top] = NULL;
     stack_name->top--;
     return data;
