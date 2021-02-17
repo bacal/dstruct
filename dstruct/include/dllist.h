@@ -22,7 +22,7 @@ extern "C"{
  * 
  */
 typedef struct dllist_struct{
-    void* data; ///< The data you wish to store
+   void* data; ///< The data you wish to store
    struct dllist_struct* prev; ///< Pointer to the previous node in the list
    struct dllist_struct* next; ///< Pointer to the next node in the list
 }dllist;

@@ -16,8 +16,9 @@ llist* llist_create()
 
 void llist_delete(llist* list)
 {
-    if(list)
+    if(list->next)
         llist_delete(list->next);
+    free(list->data);
     free(list);
 }
 

@@ -13,9 +13,10 @@ dllist* dllist_create()
 
 void dllist_delete(dllist* dlist)
 {
-    if(dlist->next!=NULL){
+    if(dlist->next){
         dllist_delete(dlist->next);
     }
+    free(dlist->data);
     free(dlist);
 }
 
@@ -31,7 +32,7 @@ void* dllist_get(dllist* dlist, int index)
 void dllist_add(dllist* dlist, void* data, size_t bytes)
 {
     
-    if(dlist->next == NULL && dlist->prev == NULL){
+    if(dlist->next == NULL && dlist->prev == NULL && dlist->data==NULL){
         dlist->data = malloc(bytes);
         memcpy(dlist->data, data, bytes);
     }
@@ -39,8 +40,8 @@ void dllist_add(dllist* dlist, void* data, size_t bytes)
         dllist* to_add = dllist_create();
         to_add->data = malloc(bytes);
         memcpy(dlist->data,data,bytes);
-        to_add->prev = dlist;
-        dlist->next = to_add;
+        to_add->prev = dllist_end(dlist);
+	dllist_end(dlist)->next = to_add;
     }
 }
 

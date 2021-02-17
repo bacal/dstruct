@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = --std=gnu99 -fPIC -Wall 
+CFLAGS = --std=gnu99 -g -fPIC -Wall 
 SRCDIR = dstruct/src
 INCDIR = dstruct/include/
 LIBDIR = lib
@@ -18,7 +18,7 @@ dstruct.so: llist.o bst.o dllist.o stack.o dyarray.o
 
 .PHONY: demo
 demo: all
-	$(CC) demo.c -I $(INCDIR) -L$(LIBDIR) -Wl,-rpath,$(LIBDIR) -l$(TARGET) -o demo
+	$(CC) demo.c -I $(INCDIR) -g -L$(LIBDIR) -Wl,-rpath,$(LIBDIR) -l$(TARGET) -o demo
 
 .PHONY: bst.o
 bst.o:
