@@ -33,7 +33,7 @@ There are no external dependencies for this library just build with a build syst
 ```
 $ make
 
-$ make demo //Optional, creates a demo program
+$ make demo //Optional, builds the demo.c program in the top directory
 ```
 
 ### CMake
