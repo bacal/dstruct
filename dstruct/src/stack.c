@@ -19,6 +19,7 @@ stack* stack_create()
     stk->size = 0;
     stk->data = NULL;
     stk->top = -1;
+    return stk;
 }
 void stack_delete(stack* stack_name)
 {

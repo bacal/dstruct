@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = --std=gnu99 -g -fPIC -Wall 
+CFLAGS = --std=gnu99 -g -O2 -fPIC -Wall 
 SRCDIR = dstruct/src
 INCDIR = dstruct/include/
 LIBDIR = lib

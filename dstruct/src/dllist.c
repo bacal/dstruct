@@ -48,7 +48,7 @@ void dllist_add(dllist* dlist, void* data, size_t bytes)
 int dllist_remove(dllist* dlist, int index)
 {
     dllist* temp = dlist;
-    int count;
+    int count = 0;
     while(temp!=NULL){
         temp = temp->next;
         count++;
@@ -74,7 +74,7 @@ dllist* dllist_end(dllist* dlist)
 
 dllist* dllist_front(dllist* dlist)
 {
-   dllist* temp;
+   dllist* temp = dlist;
     while(temp->prev !=NULL){
         temp = temp->prev;
     }

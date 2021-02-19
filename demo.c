@@ -2,12 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 #include "dstruct.h"
-#define SIZE 2
+#define SIZE 20
 
 int i=0;
 
 void update_bar(){
-  printf("\rProgress: %d",(int)(100*((float)i/SIZE)));
+  printf("\rProgress: %d%%",(int)(100*((float)i/SIZE)));
   fflush(stdout);
   i++;  
 }
@@ -24,6 +24,7 @@ int main(void){
     dllist* dlist = dllist_create();
     dyarray* array = dyarray_create(30);
     bst* tree;
+    
     printf("Adding to llist\n");
 
     for((*i)=0; (*i)<SIZE; (*i)++){
