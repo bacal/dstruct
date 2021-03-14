@@ -14,19 +14,19 @@ demo: all demo.c
 	$(CC) demo.c -I $(INCDIR) -g -L$(LIBDIR) -Wl,-rpath,$(LIBDIR) -l$(TARGET) -o demo
 
 $(LIBDIR)/bst.o: $(SRCDIR)/bst.c
-	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
 $(LIBDIR)/dllist.o:$(SRCDIR)/dllist.c
-	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
 $(LIBDIR)/llist.o: $(SRCDIR)/llist.c
-	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
 $(LIBDIR)/stack.o: $(SRCDIR)/stack.c
-	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
 $(LIBDIR)/dyarray.o: $(SRCDIR)/dyarray.c
-	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
 clean:
 	rm ./$(LIBDIR)/*.o
