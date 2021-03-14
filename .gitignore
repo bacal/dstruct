@@ -8,6 +8,7 @@
 
 
 # C Object Files
+*.o
 *.so
 *.dylib
 *.dll

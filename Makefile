@@ -1,47 +1,34 @@
 CC = gcc
-CFLAGS = --std=gnu99 -g -O2 -fPIC -Wall 
+CFLAGS = --std=gnu99 -g -Og -fPIC -Wall 
 SRCDIR = dstruct/src
 INCDIR = dstruct/include/
 LIBDIR = lib
 TARGET = dstruct
 
-all: dstruct.so
+all: $(LIBDIR)/dstruct.so
 
-dstruct.so: llist.o bst.o dllist.o stack.o dyarray.o 
-	$(CC) $(LIBDIR)/dyarray.o \
-		  $(LIBDIR)/bst.o \
-		  $(LIBDIR)/dllist.o \
-		  $(LIBDIR)/stack.o \
-		  $(LIBDIR)/llist.o \
-	  	-shared -Lstatic -o $(LIBDIR)/lib$(TARGET).so
+$(LIBDIR)/dstruct.so: $(LIBDIR)/llist.o $(LIBDIR)/bst.o $(LIBDIR)/dllist.o $(LIBDIR)/stack.o $(LIBDIR)/dyarray.o 
+	$(CC) $^ -shared -Lstatic -o $(LIBDIR)/lib$(TARGET).so
 
-
-.PHONY: demo
-demo: all
+demo: all demo.c
 	$(CC) demo.c -I $(INCDIR) -g -L$(LIBDIR) -Wl,-rpath,$(LIBDIR) -l$(TARGET) -o demo
 
-.PHONY: bst.o
-bst.o:
-	$(CC) $(SRCDIR)/$(patsubst %.o,%.c,$@) -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+$(LIBDIR)/bst.o: $(SRCDIR)/bst.c
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
 
-.PHONY: dllist.o
-dllist.o:
-	$(CC) $(SRCDIR)/$(patsubst %.o,%.c,$@) -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+$(LIBDIR)/dllist.o:$(SRCDIR)/dllist.c
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
 
-.PHONY: llist.o
-llist.o:
-	$(CC) $(SRCDIR)/$(patsubst %.o,%.c,$@) -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+$(LIBDIR)/llist.o: $(SRCDIR)/llist.c
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
 
-.PHONY: stack.o
-stack.o:
-	$(CC) $(SRCDIR)/$(patsubst %.o,%.c,$@) -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+$(LIBDIR)/stack.o: $(SRCDIR)/stack.c
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
 
-.PHONY: dyarray.o
-dyarray.o:
-	$(CC) $(SRCDIR)/$(patsubst %.o,%.c,$@) -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
+$(LIBDIR)/dyarray.o: $(SRCDIR)/dyarray.c
+	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $(LIBDIR)/$@
 
-.PHONY: clean
 clean:
 	rm ./$(LIBDIR)/*.o
 	rm ./$(LIBDIR)/lib$(TARGET).so	
-	rm ./demo
+	rm -f ./demo
