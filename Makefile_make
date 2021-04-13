@@ -28,6 +28,9 @@ $(LIBDIR)/stack.o: $(SRCDIR)/stack.c
 $(LIBDIR)/dyarray.o: $(SRCDIR)/dyarray.c
 	$(CC) $^ -I $(INCDIR) -c $(CFLAGS) -o $@
 
+test:
+
+
 clean:
 	rm ./$(LIBDIR)/*.o
 	rm ./$(LIBDIR)/lib$(TARGET).so	

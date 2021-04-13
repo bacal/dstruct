@@ -1,0 +1,2 @@
+lib_LTLIBRARIES=libdstruct.la
+libdstruct_la_SOURCES=dstruct/src/llist.c

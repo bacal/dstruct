@@ -4,14 +4,6 @@
 #include "dstruct.h"
 #define SIZE 20
 
-int i=0;
-
-void update_bar(){
-  printf("\rProgress: %d%%",(int)(100*((float)i/SIZE)));
-  fflush(stdout);
-  i++;  
-}
-
 void print_llisti(llist* list);
 void print_llistc(llist* list);
 
@@ -29,13 +21,11 @@ int main(void){
 
     for((*i)=0; (*i)<SIZE; (*i)++){
       llist_add(listi,(void*)i,sizeof(int));
-      update_bar();
     }
 
     
     for((*c)='a';(*c)<='z';(*c)++){
         llist_add(listc,(void*)c,sizeof(char));
-	update_bar();
     }
     
     printf(" done\n");
