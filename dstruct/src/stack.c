@@ -6,7 +6,7 @@
  * @date 2021-01-30
  * 
  * @copyright Copyright (c) 2021 Bacal Mesfin
- * This project is licensed under the MIT license
+ * This project is licensed under the GNU General Public License v3.0 or later
  * 
  */
 #include <stdio.h>

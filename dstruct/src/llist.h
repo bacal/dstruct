@@ -6,7 +6,7 @@
  * @date 2021-01-30
  * 
  * @copyright Copyright (c) 2021 Bacal Mesfin. 
- * This project is released under the MIT License
+ * This project is released under the GNU General Public License v3.0 or later
  */
 
 #ifndef LLIST_H
