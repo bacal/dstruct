@@ -1,6 +1,6 @@
 AC_INIT([DStruct], [0.1], [mesfinb2@vcu.edu])
 
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign subdir-objects])
 
 AC_PROG_CC
 
