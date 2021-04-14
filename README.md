@@ -20,7 +20,7 @@ You must cast your original pointer to a void* in order to store it. When retrie
 Ex. Creating a linked list
 ```C
 int p = 4;
-llist l = create_list();
+llist* l = create_list();
 llist_add(l,(void*)&p,sizeof(int)); // an int is 4 bytes, you can pass 4 here if you'd like
 printf("Item: %d\n",*(int*)l.get(0)); // prints the number 4
 ```
