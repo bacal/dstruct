@@ -31,9 +31,16 @@ There are no external dependencies for this library just build with a build syst
 
 ### GNU Make
 ```
-$ make
+$ make -f Makefile_manual
 
-$ make demo //Optional, builds the demo.c program in the top directory
+$ make -f Makefile_manual demo //Optional, builds the demo.c program in the top directory
+```
+
+### GNU Autotools
+```
+$ autoreconf -i
+$ ./configure
+$ make
 ```
 
 ### CMake
