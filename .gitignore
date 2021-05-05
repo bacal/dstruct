@@ -27,3 +27,6 @@ demo
 # KDevelop tmp files
 *swp
 *.kdev4
+
+# Misc dirs
+/.cache/**
