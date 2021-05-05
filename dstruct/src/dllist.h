@@ -54,7 +54,16 @@ void* dllist_get(dllist* dlist, int index);
  * @param data Pointer to the data to be added
  * @param bytes Size of the data to be added in bytes
  */
-void dllist_add(dllist* dlist, void* data, size_t bytes);
+void dllist_append(dllist* dlist, void* data, size_t bytes);
+
+/**
+ * @brief Inserts an item in front of the current node in the linked list
+ * 
+ * @param dlist The current position in the linked list
+ * @param data Pointer to the data to be added
+ * @param bytes Size of the data to be added in bytes
+ */
+void dllist_insert(dllist** dlist, void* data, size_t bytes);
 
 /**
  * @brief Removes an item from the linked list

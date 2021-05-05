@@ -1,10 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "dllist.h"
 #include "dstruct.h"
 #define SIZE 20
 
 void print_llisti(llist* list);
+void print_dllisti(dllist* dlist);
+
 void print_llistc(llist* list);
 
 int main(void){
@@ -38,7 +41,22 @@ int main(void){
     stack_push(stk, i, sizeof(int));
     printf("Stack Data = %d\n",*(int*)stack_peek(stk));
     stack_pop(stk);
-    dllist_add(dlist,(void*)i,sizeof(int));
+
+    printf("dlist data: ");
+    dllist_insert(&dlist, (void*)i,sizeof(int));
+    dllist_append(dlist,(void*)i,sizeof(int));
+    *i =32;
+    dllist_insert(&dlist, (void*)i, sizeof(int));
+    *i=-120;
+    dllist_insert(&dlist, (void*)i, sizeof(int));
+    *i=42;
+    dllist_insert(&dlist, (void*)i, sizeof(int));
+    *i = 12;
+    dllist_append(dlist,(void*)i,sizeof(int));
+
+
+    print_dllisti(dlist);
+
     tree = bst_create((void*)i, i, sizeof(int));
 
     dyarray_add(array,(void*)i,sizeof(int));
@@ -60,6 +78,14 @@ int main(void){
 
 void print_llisti(llist* list){
     llist* ptr = list;
+    while(ptr!=NULL){
+        printf("%d ",*(int*)(ptr->data));
+        ptr = ptr->next;
+    }
+    printf("\n");
+}
+void print_dllisti(dllist* dlist){
+    dllist* ptr = dlist;
     while(ptr!=NULL){
         printf("%d ",*(int*)(ptr->data));
         ptr = ptr->next;

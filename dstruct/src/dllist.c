@@ -29,7 +29,39 @@ void* dllist_get(dllist* dlist, int index)
     return temp->data;
 }
 
-void dllist_add(dllist* dlist, void* data, size_t bytes)
+void dllist_insert(dllist** dlist, void* data, size_t bytes)
+{
+    dllist* to_add = dllist_create();
+
+    if((*dlist)->prev == NULL && (*dlist)->prev == NULL && (*dlist)->data == NULL)
+    {
+        (*dlist)->data = malloc(bytes);
+        memcpy((*dlist)->data, data, bytes);
+    }
+    else 
+    {
+        to_add->next = (*dlist);
+        if((*dlist)->prev == NULL)
+        {
+            to_add->prev = NULL;
+            (*dlist)->prev = to_add;
+            to_add->data = malloc(bytes);
+            memcpy(to_add->data, data, bytes);
+
+        }
+
+        else 
+        {
+            to_add->prev = (*dlist)->prev;
+            (*dlist)->prev->next = to_add;
+            to_add->data = malloc(bytes);
+            memcpy(to_add->data, data, bytes);
+        }
+    }
+    *dlist = to_add;
+}
+
+void dllist_append(dllist* dlist, void* data, size_t bytes)
 {
     
     if(dlist->next == NULL && dlist->prev == NULL && dlist->data==NULL){
@@ -41,7 +73,8 @@ void dllist_add(dllist* dlist, void* data, size_t bytes)
         to_add->data = malloc(bytes);
         memcpy(dlist->data,data,bytes);
         to_add->prev = dllist_end(dlist);
-	dllist_end(dlist)->next = to_add;
+        to_add->next = NULL;
+	    dllist_end(dlist)->next = to_add;
     }
 }
 
