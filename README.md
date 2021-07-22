@@ -1,6 +1,6 @@
 # DStruct - A data structure library written in C
 
-This library aims to provide a type agnostic implementation for different data structurs in the C programming language.
+This library aims to provide a type agnostic implementation for different data structures in the C programming language.
 
 ## **Included data structures**
 - Singly Linked Lists
