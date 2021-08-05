@@ -67,5 +67,5 @@ void* stack_peek(stack* stack_name){
   }
   else
     return stack_name->data[stack_name->top];
-    
+
 }

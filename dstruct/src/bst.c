@@ -12,27 +12,27 @@
 #include <string.h>
 #include "bst.h"
 
-bst* bst_create(void* data,int* key, size_t bytes)
+bst* bst_create(void* data,int key, size_t bytes)
 {
 	bst* new_tree = calloc(1,sizeof(struct bst_struct));
 	new_tree->left=NULL;
 	new_tree->right=NULL;
 	new_tree->data = malloc(sizeof(bytes));
 	memcpy(new_tree->data, data, bytes);
-	new_tree->key = *key;
+	new_tree->key = key;
 	return new_tree;
 }
 
-void bst_add(bst* add, int* key, void* data, size_t bytes)
+void bst_add(bst* add, void* data, int key, size_t bytes)
 {
-	if(*key < add->key){
+	if(key < add->key){
 		if(add->left==NULL)
 		  add->left = bst_create(data,key,bytes);
 
 		else
 		  bst_add(add->left,data,key,bytes);
 	}
-	if(*key > add->key){
+	if(key > add->key){
 		if(add->right==NULL)
 		  add->right = bst_create(data,key,bytes);
 		else
@@ -55,19 +55,18 @@ void bst_delete(bst* n)
 int bst_contains(bst* srch, void* data, size_t bytes){
 	if(srch->left!=NULL){
 		if(bst_contains(srch->left,data,bytes)){
-			
-		}
 			return 1;
+		}
 	}
 	if(srch->right!=NULL){
 		if(bst_contains(srch->right,data,bytes)){
-			return 1;	
+			return 1;
 		}
 	}
 	if(!memcmp(srch->data,data,bytes))
 		return 1;
 
-	return 0;	
+	return 0;
 }
 
 

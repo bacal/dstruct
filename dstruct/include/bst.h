@@ -11,6 +11,7 @@
  */
 #ifndef BST_H
 #define BST_H
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C"{
@@ -33,7 +34,7 @@ typedef struct bst_struct{
  * @param bytes Size of the data in bytes
  */
   
-bst* bst_create(void* data, int* key, size_t bytes);
+bst* bst_create(void* data, int key, size_t bytes);
 
 /**
  * @brief Adds a root to a binary search tree
@@ -42,7 +43,7 @@ bst* bst_create(void* data, int* key, size_t bytes);
  * @param data Data to be stored in the new node
  * @param bytes Size of each element in bytes
  */
-void bst_add(bst* bst, int* key, void* data, size_t bytes);
+void bst_add(bst* bst, void* data, int key, size_t bytes);
 
 /**
  * Recursively deletes a parent nodes and all nodes beneath it

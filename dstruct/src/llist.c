@@ -22,16 +22,16 @@ void llist_delete(llist* list)
     free(list);
 }
 
-void* llist_get(llist* list, int* index)
+void* llist_get(llist* list, int index)
 {
     llist* temp = list;
-    for(int i=0; i<*index; i++){
+    for(int i=0; i<index; i++){
         temp = temp->next;
     }
     return temp->data;
 }
 
-void llist_add( llist* list,void* data, size_t bytes)
+void llist_add(llist* list,void* data, size_t bytes)
 {
     if(list->next == NULL && list->data==NULL){
         list->data = malloc(bytes);
@@ -46,13 +46,13 @@ void llist_add( llist* list,void* data, size_t bytes)
     }
 }
 
-int llist_remove(llist* list, int* index)
+int llist_remove(llist* list, int index)
 {
     llist* temp = list;
     llist* to_free;
     llist** head = &list;
 
-    for(int i=0; i<*index; i++){
+    for(int i=0; i<index; i++){
         if(!temp || temp->next->next == NULL){
             break;
         }
@@ -66,7 +66,7 @@ int llist_remove(llist* list, int* index)
     }
     else{
         temp = list;
-        for(int i=0; i<*index-1; i++){
+        for(int i=0; i<index-1; i++){
             temp = temp->next;
         }
         to_free = temp->next;

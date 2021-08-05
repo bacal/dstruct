@@ -1,11 +1,14 @@
 CC = gcc
-CFLAGS = --std=gnu99 -g -Og -fPIC -Wall 
+CFLAGS = --std=gnu99 -fPIC -Wall
 SRCDIR = dstruct/src
-INCDIR = $(SRCDIR)
+INCDIR = dstruct/include
 LIBDIR = lib
 TARGET = dstruct
 
 all: $(LIBDIR)/dstruct.so
+
+small: $(LIBDIR)/dstruct.so
+	strip $(LIBDIR)/libdstruct.so
 
 $(LIBDIR)/dstruct.so: $(LIBDIR)/llist.o $(LIBDIR)/bst.o $(LIBDIR)/dllist.o $(LIBDIR)/stack.o $(LIBDIR)/dyarray.o 
 	$(CC) $^ -shared -Lstatic -o $(LIBDIR)/lib$(TARGET).so

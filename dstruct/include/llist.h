@@ -27,30 +27,30 @@ typedef struct llist_struct{
 
 /**
  * @brief Create an empty Linked List
- * 
+ *
  * @return llist* - Pointer to a Linked List node
  */
 llist* llist_create();
 
 /**
  * @brief Deletes a Linked List
- * 
+ *
  * @param list The List that needs to be deleted
  */
 void llist_delete(llist* list);
 
 /**
- * @brief 
- * 
- * @param list 
+ * @brief
+ *
+ * @param list
  * @param index The place in the Linked List
  * @return void* - Returns the data at the index in the Linked List
  */
-void* llist_get(llist* list, int* index);
+void* llist_get(llist* list, int index);
 
 /**
  * @brief Add an item to the Linked List
- * 
+ *
  * @param list The List to add an element to
  * @param data Data to be added to the list
  * @param bytes Size of the data in bytes
@@ -64,7 +64,7 @@ void llist_add(llist* list,void* data, size_t bytes);
  * @param index The position in the lsit that the item needs to be removed from
  * @return int - Returns 1 if successful, -1 if failed
  */
-int llist_remove(llist* list, int* index);
+int llist_remove(llist* list, int index);
 
 /**
  * @brief Traverses to the end of a linked list
