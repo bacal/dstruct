@@ -30,3 +30,6 @@ demo
 
 # Misc dirs
 /.cache/**
+
+# Emacs auto-save files
+*~

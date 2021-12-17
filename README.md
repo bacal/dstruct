@@ -28,21 +28,8 @@ printf("Item: %d\n",*(int*)llist_get(l,0)); // prints the number 4
 
 
 ## **Building library**
-There are no external dependencies for this library just build with a build system of your choice.
+There are no external dependencies for this library.
 
-### GNU Make
-```
-$ make -f Makefile_manual
-
-$ make -f Makefile_manual demo //Optional, builds the demo.c program in the top directory
-```
-
-### GNU Autotools
-```
-$ autoreconf -i
-$ ./configure
-$ make
-```
 
 ### CMake
 ```
@@ -51,18 +38,7 @@ $ cd build
 $ cmake ..
 $ make
 ```
-
-### Meson
-```
-$ meson build
-$ cd build
-$ meson compile
-```
-
 ## **Linking the library to your project**
-
-### Make
-Copy the shared dstruct library to your project
 
 ### CMake 
 You can copy the dstruct subdirectory into your project and put `add_subdirectory(dstruct)` in your toplevel CMakeLists.txt
