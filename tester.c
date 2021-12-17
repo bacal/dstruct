@@ -77,7 +77,7 @@ int main(void){
 
 
 void print_llisti(llist* list){
-    llist* ptr = list;
+    ll_node* ptr = list->head;
     while(ptr!=NULL){
         printf("%d ",*(int*)(ptr->data));
         ptr = ptr->next;
@@ -93,7 +93,7 @@ void print_dllisti(dllist* dlist){
     printf("\n");
 }
 void print_llistc(llist* list){
-    llist* ptr = list;
+    ll_node* ptr = list->head;
     while(ptr!=NULL){
         printf("%c ",*(char*)(ptr->data));
         ptr = ptr->next;

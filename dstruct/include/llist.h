@@ -20,9 +20,15 @@ extern "C"{
  * @brief Singly Linked List structure
  * 
  */
+typedef struct ll_node_struct{
+  void* data;
+  struct ll_node_struct* next;
+}ll_node;
+  
 typedef struct llist_struct{
-    void* data; ///< Data to be stored in the Linked List node
-    struct llist_struct* next; ///< Pointer to the next element in the linked list
+  ll_node* head;
+  ll_node* tail;
+  int size;
 }llist;
 
 /**

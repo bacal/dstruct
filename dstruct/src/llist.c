@@ -9,48 +9,63 @@
 llist* llist_create()
 {
     llist* list = malloc(sizeof(struct llist_struct));
-    list->next = NULL;
-    list->data = NULL;
+    list->head = NULL;
+    list->tail = NULL;
     return list;
 }
+void free_nodes(ll_node* n){
 
+  if(n->next){
+    free_nodes(n->next);
+  }
+  free(n->data);
+  free(n);
+}
 void llist_delete(llist* list)
 {
-    if(list->next)
-        llist_delete(list->next);
-    free(list->data);
+    free_nodes(list->head);
     free(list);
 }
 
 void* llist_get(llist* list, int index)
 {
-    llist* temp = list;
+    ll_node* temp = list->head;
     for(int i=0; i<index; i++){
         temp = temp->next;
     }
     return temp->data;
 }
 
+ll_node* ll_node_create(){
+  ll_node* node = malloc(sizeof(struct ll_node_struct));
+  node->data = NULL;
+  return node;
+}
+
 void llist_add(llist* list,void* data, size_t bytes)
 {
-    if(list->next == NULL && list->data==NULL){
-        list->data = malloc(bytes);
-        memcpy(list->data,data,bytes);
-    }
-    else{
-        llist* to_add = llist_create();
-        to_add->data = malloc(bytes);
+  ll_node* to_add = ll_node_create();
+  to_add->data = malloc(bytes);
+  memcpy(to_add->data,data,bytes);
+  //list->tail->next = to_add;
 
-        memcpy(to_add->data,data,bytes);
-        llist_end(list)->next = to_add;
-    }
+  if(!list->head || !list->tail){
+    list->head = to_add;
+    list->tail = to_add;
+    list->size++;
+  }
+  else{
+    list->tail->next = to_add;
+    list->tail = list->tail->next;
+    list->size++;
+  }
 }
 
 int llist_remove(llist* list, int index)
 {
-    llist* temp = list;
-    llist* to_free;
-    llist** head = &list;
+    ll_node* temp = list->head;
+    ll_node* to_free;
+    ll_node** head = &list->head;
 
     for(int i=0; i<index; i++){
         if(!temp || temp->next->next == NULL){
@@ -61,11 +76,18 @@ int llist_remove(llist* list, int index)
     if(!temp)
         return 1;
     if(index == 0){
-        list = list->next;
-        free(*head);
+      list->head = list->head->next;
+      free(*head);
     }
+    else if(index == list->size-1){
+      for(int i=0; i<index-1; i++){
+	temp = temp->next;
+      }
+      to_free = temp->next;
+      list->tail = temp;
+    } 
     else{
-        temp = list;
+        temp = list->head;
         for(int i=0; i<index-1; i++){
             temp = temp->next;
         }
@@ -78,9 +100,5 @@ int llist_remove(llist* list, int index)
 
 llist* llist_end(llist* list)
 {
-    llist* temp = list;
-    while(temp->next!=NULL){
-        temp = temp->next;
-    }
-    return temp;
+    return list->tail;
 }
