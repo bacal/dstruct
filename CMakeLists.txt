@@ -3,7 +3,7 @@ project(dstruct_tests)
 
 set(CMAKE_GENERATOR "Unix Makefiles")
 
-include(GoogleTest)
+enable_testing()
 
 add_subdirectory(dstruct)
 
