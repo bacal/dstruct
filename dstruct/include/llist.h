@@ -67,7 +67,7 @@ void llist_add(llist* list,void* data, size_t bytes);
  * @brief Remove an item from the list
  * 
  * @param list The list to remove an item from
- * @param index The position in the lsit that the item needs to be removed from
+ * @param index The position in the list that the item needs to be removed from
  * @return int - Returns 1 if successful, -1 if failed
  */
 int llist_remove(llist* list, int index);
