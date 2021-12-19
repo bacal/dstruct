@@ -72,16 +72,6 @@ void llist_add(llist* list,void* data, size_t bytes);
  */
 int llist_remove(llist* list, int index);
 
-/**
- * @brief Traverses to the end of a linked list
- * 
- * @param list The list that needs to be traversed
- * @return llist* Pointer to a llist node
- */
-llist* llist_end(llist* list);
-
-
-
 #ifdef __cplusplus
 }
 #endif

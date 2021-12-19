@@ -11,6 +11,7 @@ llist* llist_create()
     llist* list = malloc(sizeof(struct llist_struct));
     list->head = NULL;
     list->tail = NULL;
+    list->size = 0;
     return list;
 }
 void free_nodes(ll_node* n){
@@ -30,9 +31,17 @@ void llist_delete(llist* list)
 void* llist_get(llist* list, int index)
 {
     ll_node* temp = list->head;
+    if(!list)
+      return NULL;
+    if(index>=list->size)
+      return NULL;
+    
     for(int i=0; i<index; i++){
         temp = temp->next;
     }
+    if(!temp)
+      return NULL;
+    
     return temp->data;
 }
 
@@ -67,6 +76,9 @@ int llist_remove(llist* list, int index)
     ll_node* to_free;
     ll_node** head = &list->head;
 
+    if(list->size==0)
+      return -1;
+    
     for(int i=0; i<index; i++){
         if(!temp || temp->next->next == NULL){
             break;
@@ -95,10 +107,6 @@ int llist_remove(llist* list, int index)
         temp->next = temp->next->next;
         free(to_free);
     }
+    list->size--;
     return 0;
-}
-
-llist* llist_end(llist* list)
-{
-    return list->tail;
 }
