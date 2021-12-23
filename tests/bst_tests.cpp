@@ -86,11 +86,3 @@ TEST(bst_structure, is_depth_accurate_15){
     bst_add(tree, &a, i, sizeof(int));
   ASSERT_EQ(tree->depth,15);
 }
-
-TEST(bst_depth, is_depth_accurate_32){
-  int a = 0;
-  bst* tree = bst_create(&a, 0, sizeof(int));
-  for(int i=1; i<32; i++)
-    bst_add(tree,&a,i,sizeof(int));
-  ASSERT_EQ(tree->depth,32);
-}

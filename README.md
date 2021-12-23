@@ -29,7 +29,6 @@ printf("Item: %d\n",*(int*)llist_get(l,0)); // prints the number 4
 
 ## **Building library**
 There are no external dependencies for this library.
-** GTests require the GoogleTest library
 
 
 ### CMake
