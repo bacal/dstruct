@@ -7,8 +7,9 @@ find_package(GTest REQUIRED)
 set(CMAKE_CXX_STANDARD 11)
 enable_testing()
 include_directories(../dstruct/include)
-add_executable(llist_tests llist_tests.cpp)
+add_executable(dstruct_tests llist_tests.cpp
+			     bst_tests.cpp)
 
-target_link_libraries(llist_tests GTest::gtest GTest::gtest_main dstruct)
-gtest_discover_tests(llist_tests)
+target_link_libraries(dstruct_tests GTest::gtest GTest::gtest_main dstruct)
+gtest_discover_tests(dstruct_tests)
 

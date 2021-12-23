@@ -16,15 +16,21 @@
 #ifdef __cplusplus
 extern "C"{
 #endif
+
+typedef struct bst_node_struct{
+  int key;
+  void* data;
+  struct bst_node_struct* left;
+  struct bst_node_struct* right;
+}bst_node;
+  
 /**
  * @brief Binary search tree strucutre
  * 
  */
 typedef struct bst_struct{
-	int key; ///< Key value which is used to sort tree
-	void* data; ///< Store any data type in the tree
-	struct bst_struct *left; ///< Pointer to left node in tree
-	struct bst_struct *right; ///< Pointer to right node in tree
+  int depth; ///< Depth of the tree
+  bst_node* root; ///< Pointer to root of the tree
 }bst;
 
 /**
@@ -36,6 +42,11 @@ typedef struct bst_struct{
   
 bst* bst_create(void* data, int key, size_t bytes);
 
+/**
+ * Creates a binary search tree node
+ */
+bst_node* bst_node_create(void* data, int key, size_t bytes);
+  
 /**
  * @brief Adds a root to a binary search tree
  * @param bst Binary search tree you want to add the data to
@@ -49,7 +60,7 @@ void bst_add(bst* bst, void* data, int key, size_t bytes);
  * Recursively deletes a parent nodes and all nodes beneath it
  * @param bst Binary Search Tree node from which to recursively delete
  */
-void bst_delete(bst* bst);
+void bst_delete(bst** bst);
 
 /**
  * Gets the smallest key in the binary search tree
