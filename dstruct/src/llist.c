@@ -16,18 +16,25 @@ llist* llist_create()
 }
 void free_nodes(ll_node* n){
 
-  if(n->next){
-    free_nodes(n->next);
+  if(n){
+    if(n->next){
+      free_nodes(n->next);
+    }
+    free(n->data);
+    free(n);
   }
-  free(n->data);
-  free(n);
-}
-void llist_delete(llist* list)
-{
-    free_nodes(list->head);
-    free(list);
 }
 
+void llist_delete(llist** list)
+{
+  if(list){
+    if(*list){
+      free_nodes((*list)->head);
+      free(*list);
+      *list = NULL;
+    }
+  }
+}
 void* llist_get(llist* list, int index)
 {
     ll_node* temp = list->head;

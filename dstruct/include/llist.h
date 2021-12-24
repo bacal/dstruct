@@ -41,9 +41,9 @@ llist* llist_create();
 /**
  * @brief Deletes a Linked List
  *
- * @param list The List that needs to be deleted
+ * @param list A pointer to the List that needs to be deleted
  */
-void llist_delete(llist* list);
+void llist_delete(llist** list);
 
 /**
  * @brief
