@@ -5,10 +5,13 @@ include(GoogleTest)
 find_package(GTest REQUIRED)
 
 set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 enable_testing()
 include_directories(../dstruct/include)
 add_executable(dstruct_tests llist_tests.cpp
 			     bst_tests.cpp)
+
 
 target_link_libraries(dstruct_tests GTest::gtest GTest::gtest_main dstruct)
 gtest_discover_tests(dstruct_tests)

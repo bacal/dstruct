@@ -1,16 +1,17 @@
 cmake_minimum_required(VERSION 3.16.0)
 project(dstruct VERSION 0.0.1 DESCRIPTION "A C data structure library")
 
-include(GNUInstallDirs)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
 
-add_library(dstruct SHARED)
-target_include_directories(dstruct PRIVATE include/)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-target_sources(dstruct PRIVATE src/bst
-                               src/llist
-                               src/dllist
-                               src/stack
-                               src/dyarray)
+include_directories(dstruct PRIVATE include/)
+
+add_library(dstruct SHARED src/bst.c
+                           src/llist.c
+                           src/dllist.c
+                           src/stack.c
+                           src/dyarray.c)
 
 
 

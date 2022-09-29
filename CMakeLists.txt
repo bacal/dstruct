@@ -6,7 +6,4 @@ set(CMAKE_GENERATOR "Unix Makefiles")
 enable_testing()
 
 add_subdirectory(dstruct)
-
-IF(BUILD_TESTING)
 add_subdirectory(tests)
-ENDIF(BUILD_TESTING)
