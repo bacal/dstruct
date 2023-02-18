@@ -16,11 +16,12 @@ add_library(dstruct SHARED src/bst.c
                            src/dyarray.c)
 
 set_target_properties(dstruct PROPERTIES PUBLIC_HEADER include/dstruct.h)
+set_target_properties(dstruct PROPERTIES PRIVATE_HEADER "include/bst.h;include/llist.h;include/dllist.h;include/stack.h;include/dyarray.h;" )
 
 install(TARGETS dstruct
 
         PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include/dstruct
         PRIVATE_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include/dstruct
-        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/dstruct)
+        LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
 
 
