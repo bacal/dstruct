@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.0)
+cmake_minimum_required(VERSION 3.21.0)
 project(dstruct_tests)
 
 set(CMAKE_GENERATOR "Unix Makefiles")

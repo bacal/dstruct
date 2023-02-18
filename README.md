@@ -38,6 +38,7 @@ $ mkdir build
 $ cd build
 $ cmake ..
 $ make
+$ sudo make install
 ```
 ## **Linking the library to your project**
 
